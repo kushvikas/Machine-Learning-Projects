@@ -1,7 +1,10 @@
 # Machine-Learning-Projects
 
 ACCURACY, RECALL, PRECISION, AND F1 SCORE
+
+
 Accuracy
+
 After creating a machine learning algorithm capable of making classifications, the next step in the process is to calculate its predictive power. In order to calculate these statistics, we’ll need to split our data into a training set and validation set.
 
 Let’s say you’re using a machine learning algorithm to try to predict whether or not you will get above a B on a test. The features of your data could be something like:
@@ -24,3 +27,24 @@ False Positive: The algorithm predicted you would get above a B, and you didn’
 False Negative: The algorithm predicted you would get below a B, and you didn’t.
 Let’s calculate the accuracy of a classification algorithm!
 
+
+Recall
+
+Accuracy can be an extremely misleading statistic depending on your data. Consider the example of an algorithm that is trying to predict whether or not there will be over 3 feet of snow on the ground tomorrow. We can write a pretty accurate classifier right now: always predict False. This classifier will be incredibly accurate — there are hardly ever many days with that much snow. But this classifier never finds the information we’re actually interested in.
+
+In this situation, the statistic that would be helpful is recall. Recall measures the percentage of relevant items that your classifier found. In this example, recall is the number of snow days the algorithm correctly predicted divided by the total number of snow days. Another way of saying this is:
+
+True Positives / (True Positives + False Negatives)
+Our algorithm that always predicts False might have a very high accuracy, but it never will find any True Positives, so its recall is 0. This makes sense; recall should be very low for such an absurd classifier.
+
+
+Precision
+
+Unfortunately, recall isn’t a perfect statistic either. For example, we could create a snow day classifier that always returns True. This would have low accuracy, but its recall would be 1 because it would be able to accurately find every snow day. But this classifier is just as nonsensical as the one before! The statistic that will help demonstrate that this algorithm is flawed is precision.
+
+In the snow day example, precision is the number of snow days the algorithm correctly predicted divided by the number of times it predicted there would be a snow day. The formula for precision is below:
+
+True Positives / (True Positives + False Positives)
+The algorithm that predicts every day is a snow day has recall of 1, but it will have very low precision. It correctly predicts every snow day, but there are tons of false positives as well.
+
+Precision and recall are statistics that are on opposite ends of a scale. If one goes down, the other will go up.
