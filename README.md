@@ -48,3 +48,23 @@ True Positives / (True Positives + False Positives)
 The algorithm that predicts every day is a snow day has recall of 1, but it will have very low precision. It correctly predicts every snow day, but there are tons of false positives as well.
 
 Precision and recall are statistics that are on opposite ends of a scale. If one goes down, the other will go up.
+
+
+_____________________________________________________________________________________________________________________
+
+
+Review
+You’ve now learned many different ways to analyze the predictive power of your algorithm. Some of the key insights for this course include:
+
+Classifying a single point can result in a true positive (truth = 1, guess = 1), a true negative (truth = 0, guess = 0), a false positive (truth = 0, guess = 1), or a false negative (truth = 1, guess = 0).
+Accuracy measures how many classifications your algorithm got correct out of every classification it made.
+Recall measures the percentage of the relevant items your classifier was able to successfully find.
+Precision measures the percentage of items your classifier found that were actually relevant.
+Precision and recall are tied to each other. As one goes up, the other will go down.
+F1 score is a combination of precision and recall.
+F1 score will be low if either precision or recall is low.
+The decision to use precision, recall, or F1 score ultimately comes down to the context of your classification. Maybe you don’t care if your classifier has a lot of false positives. If that’s the case, precision doesn’t matter as much.
+
+As long as you have an understanding of what question you’re trying to answer, you should be able to determine which statistic is most relevant to you.
+
+The Python library scikit-learn has some functions that will calculate these statistics for you!
